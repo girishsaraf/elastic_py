@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 ES_DATA
+ES_DATA/
