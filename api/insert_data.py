@@ -5,8 +5,8 @@ from flask import jsonify
 
 es = connect_elasticsearch()
 
-@app.route('/insert_data', methods=['POST'])
-def insert_data():
+@app.route('/add_user', methods=['POST'])
+def add_user():
     user_id = request.form['id']
     first_name = request.form['fname']
     last_name = request.form['lname']
@@ -20,3 +20,18 @@ def insert_data():
 
     result = es.index(index='user', id=user_id, body=user_obj, request_timeout=30)
     return jsonify(result)
+
+@app.route('/update_user', methods=['POST'])
+def update_user():
+    user_id = request.form['id']
+    param = request.form['param']
+    new_val = request.form['new_value']
+
+    update_dict = {
+        'doc':{
+            param: new_val
+        }
+    }
+
+    response = es.update(index='user', id=user_id, body=update_dict)
+    return jsonify(response)

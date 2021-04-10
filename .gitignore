@@ -128,5 +128,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Elastic Kibana Log files
 ES_DATA
 ES_DATA/
+data01
+data01/
+data02
+data02/
+data03
+data03/
+
+.DS_Store
+.DS_Store/

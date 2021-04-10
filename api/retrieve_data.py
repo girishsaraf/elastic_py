@@ -10,15 +10,15 @@ def home():
     return jsonify(message)
 
 
-@app.route('/get_data', methods=['GET'])
-def get_data():
+@app.route('/get_user', methods=['GET'])
+def get_user():
     user_id = request.form['id']
     results = es.get(index='user', id=user_id)
     return jsonify(results['_source'])
 
 
-@app.route('/search_name', methods=['GET'])
-def search_name():
+@app.route('/search_user', methods=['GET'])
+def search_user():
     keyword = request.form['keyword']
 
     query_body = {

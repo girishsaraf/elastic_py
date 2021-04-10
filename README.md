@@ -9,9 +9,11 @@ But the primary issue is that many people are unaware how this can be used in ex
 This is a lightweight application which will store the data on ES cluster and then retrieve using ES - Python Queries
 
 ## Technologies Used:
-Python Flask
-ElasticSearch
-Docker
+* Python Flask
+* ElasticSearch
+* Docker
+
+*Ensure to allocate more than 4 GB of space for docker, to ensure that the elastic cluster starts without fail*
 
 ## Machine:
 MacOS 11
